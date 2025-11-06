@@ -11,7 +11,9 @@ export default function Home() {
   const [result, setResult] = useState(null);
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3001");
+    // const newSocket = io("http://localhost:3001");
+    const socketUrl ="https://prompt-detection-backend.onrender.com/";
+    const newSocket = io(socketUrl);
     setSocket(newSocket);
 
     newSocket.on("connect", () => {
